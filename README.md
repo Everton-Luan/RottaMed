@@ -3,3 +3,4 @@ Esse repositório é um projeto para a disciplina Fundamentos de Programação, 
 
 ## 👥 | Integrantes do grupo
 * Everton Luan Gomes Batista - everton.luan@ufrpe.br / elgb@cesar.school
+* Ricardo Freire de Sousa Neto - rfsn@cesar.school / ric_fneto@live.com
