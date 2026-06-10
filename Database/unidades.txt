@@ -1,0 +1,5 @@
+UPA Ibura;UPA;Baixo;Clinica Geral,Pediatria
+Hospital Helena Moura;UPA;Lotado;Pediatria
+UBS Boa Viagem;UBS;Moderado;Clinica Geral,Vacinação
+UPA Imbiribeira;UPA;Baixo;Clinica Geral,Traumatologia
+UBS Cais do Apolo;UBS;Baixo;Clinica Geral,Odontologia
