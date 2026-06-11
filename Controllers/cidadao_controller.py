@@ -8,7 +8,8 @@ def salvar_usuario(usuario):
         linha = (
             f"{usuario['nome']};"
             f"{usuario['cpf']};"
-            f"{usuario['senha']};"
+            f"{usuario['senha']}\n;"
         )
 
         arquivo.write(linha)
+
