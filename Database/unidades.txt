@@ -1,5 +1,8 @@
-UPA Ibura;UPA;Baixo;Clinica Geral,Pediatria
-Hospital Helena Moura;UPA;Lotado;Pediatria
-UBS Boa Viagem;UBS;Moderado;Clinica Geral,Vacinação
-UPA Imbiribeira;UPA;Baixo;Clinica Geral,Traumatologia
-UBS Cais do Apolo;UBS;Baixo;Clinica Geral,Odontologia
+UPA Ibura;UPA;Baixo;Clinica Geral,Pediatria;71094807478;1234
+Hospital Helena Moura;UPA;Lotado;Pediatria;71094807478;1234
+UBS Boa Viagem;UBS;Moderado;Clinica Geral,Vacinação;71094807478;1234
+UPA Imbiribeira;UPA;Baixo;Clinica Geral,Traumatologia;71094807478;1234
+UBS Cais do Apolo;UBS;Baixo;Clinica Geral,Odontologia;71094807478;1234
+Upa Ficticia;UPA;Moderado;Plau, Lau, Xablau;71094807478;1234
+Ubs Disney;UBS;Super Lotado;Misca, Musca, Mickey, Mouse;71094807478;4321
+Aaaa;UBS;Leve;Agua, Fogo, Terra, Ar;71094807478;1234
