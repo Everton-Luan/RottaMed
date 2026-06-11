@@ -16,7 +16,7 @@ def salvar_unidade(unidade):
 
         arquivo.write(linha)
 
-def iniciar_cadastro_unidade():
+def cadastrar_unidade():
     # 1. Chama a View para pegar os dados
     nome, tipo, fluxo, espec, cpf, senha = add_dados_unidade()
     
@@ -32,4 +32,8 @@ def iniciar_cadastro_unidade():
     
     # 3. Salva
     salvar_unidade(unidade_dict)
+    menssagem("Unidade cadastrada com sucesso!!")
+
+def ler_unidade():
+    pass
   

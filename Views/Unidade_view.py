@@ -1,7 +1,10 @@
 from Utils.Validacoes import *
 
+def menssagem(m):
+     print(m)
+
 def add_dados_unidade():
-    nome = input("- Digite seu nome: ")
+    nome = input("- Digite o nome da unidade: ")
     while validar_nome(nome) == False:
         nome = input("- Nome inválido!! digite novamente: ")
 
