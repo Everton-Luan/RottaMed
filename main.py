@@ -1,6 +1,7 @@
 import Views.Menu_principal_view as viewM
 import Controllers.cidadao_controller as controllerC
 import Controllers.Gestor_controller as controllerG
+import Controllers.Dev_controller as controllerD
 
 def iniciar_sistema():
     while True:
@@ -9,24 +10,13 @@ def iniciar_sistema():
 
         match opcao:
             case "1":
-                # Direciona o usuário para o laço do Cidadão que acabamos de fazer!
                 controllerC.iniciar_tela_cidadao()
                 
             case "2":
-            
                 controllerG.iniciar_tela_gestor()
             
             case "3":
-                print("\n" + "=" * 45)
-                print(" 🚧 TELA DESENVOLVEDOR (Em desenvolvimento) 🚧".center(45))
-                print("=" * 45)
-                if viewM.confirmacao_volta():
-                    continue
-                else:
-                    print("Saindo...")
-                    break
-                # No futuro:
-                # controllerD.iniciar_tela_dev()
+                controllerD.iniciar_tela_dev()
                 
             case "4":
                 print("\n" + "=" * 45)
