@@ -2,14 +2,16 @@ ARQUIVO = "database/unidades.txt"
 
 
 # Estrutura os dados da unidade
-def criar_dicionario_unidade(nome, tipo, fluxo, especializacoes, cpf, senha):
+def criar_dicionario_unidade(nome, tipo, fluxo, especializacoes, cpf, senha, latitude=0.0, longitude=0.0):
     return {
         "nome": nome,
         "tipo": tipo,
         "fluxo": fluxo,
         "especializações": especializacoes,
         "cpf_gestor": cpf,
-        "senha_gestor": senha
+        "senha_gestor": senha,
+        "latitude": float(latitude),
+        "longitude": float(longitude)
     }
 
 # Salva os dados de uma UNICA unidade no arquivo.txt, adicionando-o na ultima linha
@@ -22,7 +24,9 @@ def salvar_unidade(unidade):
             f"{unidade['fluxo']};"
             f"{unidade['especializações']};"
             f"{unidade['cpf_gestor']};"
-            f"{unidade['senha_gestor']}\n"
+            f"{unidade['senha_gestor']};"
+            f"{unidade['latitude']};"
+            f"{unidade['longitude']}\n"
         )
 
         arquivo.write(linha)
@@ -42,7 +46,9 @@ def modificar_unidades(lista_unidades):
                 f"{unidade['fluxo']};"
                 f"{unidade['especializações']};"
                 f"{unidade['cpf_gestor']};"
-                f"{unidade['senha_gestor']}\n"
+                f"{unidade['senha_gestor']};"
+                f"{unidade['latitude']};"
+                f"{unidade['longitude']}\n"
             )
             
             arquivo.write(linha)
@@ -56,8 +62,8 @@ def ler_dados_txt():
         with open(ARQUIVO, "r", encoding="utf-8") as arquivo:
             for linha in arquivo:
                 dados = linha.strip().split(";")
-                if len(dados) >= 6:
-                    unidade = criar_dicionario_unidade(dados[0], dados[1], dados[2], dados[3], dados[4], dados[5])
+                if len(dados) >= 8: # Agora exigimos estritamente 8 campos
+                    unidade = criar_dicionario_unidade(dados[0], dados[1], dados[2], dados[3], dados[4], dados[5], dados[6], dados[7])
                     lista_unidades.append(unidade)
     except FileNotFoundError:
         pass # Se o arquivo não existir, retorna a lista vazia

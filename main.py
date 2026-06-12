@@ -1,6 +1,7 @@
 from Views.Menu_view import *
 from Utils.Validacoes import *
-from Controllers.cidadao_controller import salvar_usuario
+from Controllers.cidadao_controller import salvar_usuario, listar_upas_proximas
+from Views.Cidadao_view import menu_cidadao
 
 menu()
 
@@ -13,7 +14,19 @@ if opcao == 1:
         case 1:
             input("Fazer login com CPF: ")
             input("Digite sua senha: ")
-            print("ok")
+            print("\nLogin realizado com sucesso!")
+            
+            while True:
+                opcao_cidadao = menu_cidadao()
+                if opcao_cidadao == "1":
+                    print("\nEm desenvolvimento")
+                elif opcao_cidadao == "2":
+                    print("\nEm desenvolvimento")
+                elif opcao_cidadao == "3":
+                    listar_upas_proximas()
+                elif opcao_cidadao == "4":
+                    print("\nSaindo da conta...")
+                    break
 
         case 2:
             nome = input("Nome: ")

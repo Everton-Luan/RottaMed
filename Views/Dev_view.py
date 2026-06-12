@@ -23,14 +23,20 @@ def pedir_dados_unidade():
     tipo = input("▶ Tipo da unidade: ").strip().title()
     fluxo = input("▶ Fluxo da unidade: ").strip().title()
     especializacoes = input("▶ Especialidades da unidade: ").strip().title()
-    lotacao = input("▶ Lotação da unidade: ").strip()
+    cpf_gestor = input("▶ CPF do gestor da unidade: ").strip()
+    senha_gestor = input("▶ Senha do gestor: ").strip()
+    latitude = input("▶ Latitude da unidade (ex: -8.128555): ").strip()
+    longitude = input("▶ Longitude da unidade (ex: -34.949972): ").strip()
 
     return {
         "nome": nome,
         "tipo": tipo, 
         "fluxo": fluxo,
         "especializações": especializacoes,
-        "lotação": lotacao
+        "cpf_gestor": cpf_gestor,
+        "senha_gestor": senha_gestor,
+        "latitude": latitude,
+        "longitude": longitude
     }
 
 
