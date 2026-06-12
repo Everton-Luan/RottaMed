@@ -127,7 +127,7 @@ def exibir_unidade_unica(unidade):
 
 def confirmacao_exclusao():
     """Pergunta se o usuário tem certeza e devolve True (Sim) ou False (Não)"""
-    resposta = input(" ⚠️ Tem certeza que deseja excluir esta unidade permanentemente? (Sim/Não): ").strip().upper()
+    resposta = input(" Tem certeza que deseja excluir esta unidade permanentemente? (Sim/Não): ").strip().upper()
     resposta = utilT.remover_acentos(resposta)
     while resposta not in ["SIM", "NAO"]:
         resposta = input(" Tipo inválido!! digite 'Sim' ou 'Não'!!: ").strip().upper()

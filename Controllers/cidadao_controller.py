@@ -80,7 +80,7 @@ def iniciar_tela_cidadao():
 
             case "5":
                 print("\n" + "=" * 45)
-                print("\n↩ Retornando ao Menu Principal...")
+                print("\n Retornando ao Menu Principal...")
                 print("\n" + "=" * 45)
                 break # Quebra o
 
