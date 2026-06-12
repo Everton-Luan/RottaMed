@@ -41,7 +41,7 @@ def iniciar_tela_gestor():
                 unidade_logada = iniciar_atualizacao_gestor(unidade_logada, indice_logado, lista_unidades)         
 
             case "3":
-                print("\n👋 Fazendo logout... Retornando ao Menu Principal.")
+                print("\n Fazendo logout... Retornando ao Menu Principal.")
                 break #Quebra o while
 
 
