@@ -106,7 +106,7 @@ def iniciar_atualizacao():
     # 10. Avisa que deu tudo certo
     view.menssagem("\n ✅ Unidade atualizada com sucesso no sistema!")
 
-def iniciar_exclusão():
+def iniciar_exclusao():
     print("\n===== EXCLUIR UNIDADE =====")
 
     # Pede o nome e puxa a lista completa
