@@ -1,9 +1,8 @@
 import Utils.Validacoes as util
+import Utils.texto as utilTexto
 import textwrap
 
-# Parte do Create
-
-# 1. Pegando os dados que  serão digitados
+# Pegando os dados que  serão digitados
 def add_dados_unidade():
     print("\n===== Adicionando dados da unidade =====")
 
@@ -13,7 +12,7 @@ def add_dados_unidade():
 
     tipo = input("▶ Digite o tipo (UPA/UBS): ").strip().upper()
     while tipo not in ["UPA", "UBS"]:
-        tipo = input(" ❌ Tipo inválido!! digite UPA ou UBS: ").upper()
+        tipo = input(" ❌ Tipo inválido!! digite UPA ou UBS: ").strip().upper()
 
     fluxo = input("▶ Digite o fluxo: ").strip().title()
 
@@ -29,15 +28,13 @@ def add_dados_unidade():
 
 
 
-# Parte do Read
-
-# 1. Ferramenta de pergunta
+# Ferramenta de pergunta
 def pedir_nome_busca():
     print("\n===== Buscar unidade específica =====")
     nome = input("▶ Digite o nome da Unidade: ")
     return nome
 
-# 2. Ferramenta para mostrar TODAS as unidades
+# Ferramenta para mostrar TODAS as unidades
 def exibir_unidades(lista_unidades):
     if not lista_unidades: # Se a lista estiver vazia
         print("\n❌ Nenhuma unidade cadastrada ainda.")
@@ -70,7 +67,7 @@ def exibir_unidades(lista_unidades):
         # Linha divisória de baixo
         print("-" * 45)
 
-# 3. Ferramenta para mostrar UMA unidade
+# Ferramenta para mostrar UMA unidade
 def exibir_unidade_unica(unidade):
     if unidade is None:
         print("\n❌ Unidade não encontrada no sistema.")
@@ -89,3 +86,21 @@ def exibir_unidade_unica(unidade):
         )
     print(texto_espec_formatado)
     print("="*45 + "\n")
+
+def confirmacao_exclusao():
+    """Pergunta se o usuário tem certeza e devolve True (Sim) ou False (Não)"""
+    resposta = input(" ⚠️ Tem certeza que deseja excluir esta unidade permanentemente? (Sim/Não): ").strip().upper()
+    resposta = utilTexto.remover_acentos(resposta)
+    while resposta not in ["SIM", "NAO"]:
+        resposta = input(" ❌ Tipo inválido!! digite 'Sim' ou 'Não'!!: ").strip().upper()
+
+    match resposta:
+        case "SIM":
+            return True
+        case "NAO":
+            return False
+
+# Menssagens
+
+def menssagem(m):
+     print(m)
