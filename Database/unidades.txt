@@ -6,3 +6,4 @@ UBS Cais do Apolo;UBS;Baixo;Clinica Geral,Odontologia;71094807478;1234
 Upa Ficticia;UPA;Moderado;Plau, Lau, Xablau;71094807478;1234
 Ubs Disney;UBS;Super Lotado;Misca, Musca, Mickey, Mouse;71094807478;4321
 Aaaa;UBS;Leve;Agua, Fogo, Terra, Ar;71094807478;1234
+
