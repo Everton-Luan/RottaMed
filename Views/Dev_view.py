@@ -1,6 +1,6 @@
 def pedir_senha_master():
     print("\n" + "="*45)
-    print(" 👨‍💻 ACESSO RESTRITO - DESENVOLVEDOR ".center(45))
+    print(" ACESSO RESTRITO - DESENVOLVEDOR ".center(45))
     print("="*45)
     
     senha = input("▶ Digite a senha master: ").strip()
@@ -8,7 +8,7 @@ def pedir_senha_master():
 
 def menu_dev():
     print("\n" + "="*45)
-    print(" 🛠️ PAINEL DO DESENVOLVEDOR ".center(45))
+    print(" PAINEL DO DESENVOLVEDOR ".center(45))
     print("="*45)
     print("  [1] Cadastrar nova unidade")
     print("  [2] Listar todas as unidades")
@@ -20,6 +20,6 @@ def menu_dev():
     
     opcao = input("▶ Escolha uma opção: ").strip()
     while opcao not in ["1", "2", "3", "4", "5", "6"]:
-        opcao = input(" ❌ Opção inválida!! Digite novamente: ").strip()
+        opcao = input(" Opção inválida!! Digite novamente: ").strip()
         
     return opcao
