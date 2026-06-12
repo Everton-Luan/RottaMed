@@ -9,8 +9,10 @@ def menu_dev():
     print("[5] Sair")
     print("=" * 45)
 
-    return input("▶ Escolha uma opção: ").strip()
-
+    opcao = input("▶ Escolha uma opção: ").strip()
+    while opcao not in ["1","2", "3", "4","5"]:
+        opcao = input(" ❌ Opção inválida!! Digite novamente: ").strip()
+    return opcao
 
 def pedir_dados_unidade():
     print("\n" + "=" * 45)

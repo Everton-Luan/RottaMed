@@ -9,7 +9,10 @@ def menu_gestor():
     print("[4] Sair")
     print("=" * 45)
 
-    return input("▶ Escolha uma opção: ").strip()
+    opcao = input("▶ Escolha uma opção: ").strip()
+    while opcao not in ["1","2", "3", "4"]:
+        opcao = input(" ❌ Opção inválida!! Digite novamente: ").strip()
+    return opcao
 
 
 def pedir_especialidades():
