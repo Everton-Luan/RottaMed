@@ -1,54 +1,51 @@
-from Views.Menu_view import *
-from Utils.Validacoes import *
-from Controllers.cidadao_controller import salvar_usuario, listar_upas_proximas
-from Views.Cidadao_view import menu_cidadao
+import Views.Menu_principal_view as viewM
+import Controllers.cidadao_controller as controllerC
 
-menu()
 
-opcao = int(input("\nEscolha uma opção: "))
 
-if opcao == 1:
-    entrada = int(input("1.Fazer login\n2.Criar conta\n0.Sair\n"))
+def iniciar_sistema():
+    while True:
+        # Puxa a sua função que exibe a tela e devolve 1, 2, 3 ou 4
+        opcao = viewM.exibir_menu_principal()
 
-    match entrada:
-        case 1:
-            input("Fazer login com CPF: ")
-            input("Digite sua senha: ")
-            print("\nLogin realizado com sucesso!")
-            
-            while True:
-                opcao_cidadao = menu_cidadao()
-                if opcao_cidadao == "1":
-                    print("\nEm desenvolvimento")
-                elif opcao_cidadao == "2":
-                    print("\nEm desenvolvimento")
-                elif opcao_cidadao == "3":
-                    listar_upas_proximas()
-                elif opcao_cidadao == "4":
-                    print("\nSaindo da conta...")
+        match opcao:
+            case "1":
+                # Direciona o usuário para o laço do Cidadão que acabamos de fazer!
+                controllerC.iniciar_tela_cidadao()
+                
+            case "2":
+                print("\n" + "=" * 45)
+                print(" 🚧 TELA DO GESTOR (Em desenvolvimento) 🚧".center(45))
+                print("=" * 45)
+                if viewM.confirmacao_volta():
+                    continue
+                else:
+                    print("Saindo...")
                     break
+                # No futuro, você vai apenas desmarcar a linha abaixo:
+                # controllerG.iniciar_tela_gestor()
+                
+            case "3":
+                print("\n" + "=" * 45)
+                print(" 🚧 TELA DESENVOLVEDOR (Em desenvolvimento) 🚧".center(45))
+                print("=" * 45)
+                if viewM.confirmacao_volta():
+                    continue
+                else:
+                    print("Saindo...")
+                    break
+                # No futuro:
+                # controllerD.iniciar_tela_dev()
+                
+            case "4":
+                print("\n" + "=" * 45)
+                print(" 👋 Encerrando o sistema RottaMed... Até logo!".center(45))
+                print("=" * 45)
+                break # Quebra o while principal, desligando o programa
 
-        case 2:
-            nome = input("Nome: ")
-            while validar_nome(nome) == False:
-                print("Nome inválido.")
-                nome = input("Nome: ")
-            cpf = input("CPF: ")
-            while validar_cpf(cpf) == False:
-                print("CPF inválido.")
-                cpf = input("CPF: ")
-            senha = float(input("Senha: "))
-        
+# Essa condição garante que o sistema só rode se este arquivo for executado diretamente
+if __name__ == "__main__":
+    iniciar_sistema()
 
-            usuario = {
-                "nome": nome,
-                 "cpf": cpf,
-                 "senha": senha
-                 }
 
-            salvar_usuario(usuario)
-            print("Cadastrado Realizado!")
-        case 0:
-            print("\nSaindo...")
-        case _:
-            print("Opção inválida")
+
