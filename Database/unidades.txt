@@ -1,2 +1,2 @@
-UPA Ibura;UPA;Baixo;Clinica Geral,Pediatria;71094807478;1234;0.0;0.0
-UBS Varzea;UBS;Super Lotado;Ortopedia,Odontologia;11986987485;166518;0.0;0.0
+UPA Ibura;UPA;Baixo;Clinica Geral,Pediatria;71094807478;1234;-8.128210;-34.94732
+UPA Caxanga;UPA;Super Lotado;Ortopedia,Odontologia;11986987485;166518;-8.02933;-34.9577
