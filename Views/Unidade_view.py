@@ -2,7 +2,7 @@ import Utils.Validacoes as utilV
 import Utils.texto as utilT
 import textwrap
 
-# Pegando os dados que  serão digitados
+#Pegando os dados que digitou
 def add_dados_unidade():
     print("\n===== Adicionando dados da unidade =====")
 
@@ -40,15 +40,15 @@ def gestor_atualiza_dados(unidade):
     texto_formatado = textwrap.fill(
             texto,
             width=45,
-            subsequent_indent="  " # Dá dois espacinhos se a palavra tiver que descer
+            subsequent_indent="  " #Dá dois espacinhos se a palavra tiver que descer
         )
     print(texto_formatado)
     print("-" * 45)
 
-    # Imprime os dados da unidade antes de atualizar
+    #Mostra os dados da unidade antes de atualizar
     exibir_unidade_unica(unidade)
 
-    # Pede o novo Fluxo
+    #Pede o novo fluxo
     print("📍 Atualizar dados:")
     print("-" * 45)
     novo_fluxo = input("▶ Novo Fluxo: ").strip()
@@ -56,7 +56,7 @@ def gestor_atualiza_dados(unidade):
     if novo_fluxo == "":
         novo_fluxo = unidade['fluxo']
         
-    # Pede as novas Especializações
+    #Pede as novas especializações
     nova_espec = input("▶ Novas Especializações: ").strip()
     # Se apertar Enter vazio, mantemos as antigas
     if nova_espec == "":
@@ -65,13 +65,13 @@ def gestor_atualiza_dados(unidade):
     return novo_fluxo, nova_espec
 
 
-# Ferramenta de pergunta
+#Perguntas
 def pedir_nome_busca():
     print("\n===== Buscar unidade específica =====")
     nome = input("▶ Digite o nome da Unidade: ")
     return nome
 
-# Ferramenta para mostrar TODAS as unidades
+# Mostra todas as unidades
 def exibir_unidades(lista_unidades):
     if not lista_unidades: # Se a lista estiver vazia
         print("\n❌ Nenhuma unidade cadastrada ainda.")
@@ -82,19 +82,19 @@ def exibir_unidades(lista_unidades):
     print("="*45)
     
     for i, unidade in enumerate(lista_unidades):
-        # Imprime a primeira linha (Nome e Tipo)
+        #Mostra a primeira linha (Nome e Tipo)
         print(f"[{i + 1}] {unidade['nome'].title()} ({unidade['tipo']})")
-        # Imprime a segunda linha (Fluxo)
+        #Mostra a segunda linha (Fluxo)
         print(f"▶ Fluxo: {unidade['fluxo']}")
-        # Monta APENAS a linha de especializações
+        #Mostra a linha de especializações
         texto_espec = f"▶ Especializações: {unidade['especializações'].title()}"
-        # O textwrap vai agir só nas especializações se passar de 45 letras
+        #O textwrap vai agir só nas especializações se passar de 45 letras
         texto_espec_formatado = textwrap.fill(
             texto_espec,
             width=45,
-            subsequent_indent="  " # Dá dois espacinhos se a palavra tiver que descer
+            subsequent_indent="  " #Dá dois espacinhos se a palavra tiver que descer
         )
-        # Imprime a linha de especializações formatada
+        #Mostra a linha de especializações formatada
         print(texto_espec_formatado)
         print(f"▶ Latitude: {unidade['latitude']}")
         print(f"▶ Longitude: {unidade['longitude']}")
@@ -102,7 +102,7 @@ def exibir_unidades(lista_unidades):
         # Linha divisória de baixo
         print("-" * 45)
 
-# Ferramenta para mostrar UMA unidade
+#Mostra uma unidade
 def exibir_unidade_unica(unidade):
     if unidade is None:
         print("\n❌ Unidade não encontrada no sistema.")
@@ -117,7 +117,7 @@ def exibir_unidade_unica(unidade):
     texto_espec_formatado = textwrap.fill(
             texto_espec,
             width=45,
-            subsequent_indent="  " # Dá dois espacinhos se a palavra tiver que descer
+            subsequent_indent="  " #Dá dois espacinhos se a palavra tiver que descer
         )
     print(texto_espec_formatado)
     print(f"▶ Latitude: {unidade['latitude']}")    
@@ -138,7 +138,6 @@ def confirmacao_exclusao():
         case "NAO":
             return False
 
-# Menssagens
 
 def menssagem(m):
      print(m)

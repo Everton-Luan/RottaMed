@@ -22,7 +22,7 @@ def iniciar_sistema():
                 print("\n" + "=" * 45)
                 print(" 👋 Encerrando o sistema RottaMed... Até logo!".center(45))
                 print("=" * 45)
-                break # Quebra o while principal, desligando o programa
+                break #Quebra o while principal, desligando o programa
 
 #Essa condição garante que o sistema só rode se este arquivo for executado diretamente
 if __name__ == "__main__":

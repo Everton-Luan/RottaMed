@@ -1,2 +1,2 @@
-UPA Ibura;UPA;Baixo;Clinica Geral,Pediatria;71094807478;1234;-8.128210;-34.94732
-UPA Caxanga;UPA;Super Lotado;Ortopedia,Odontologia;11986987485;166518;-8.02933;-34.9577
+UPA Ibura;UPA;Baixo;Clinica Geral,Pediatria;71094807478;1234;-8.128210;        -34.94732
+UPA Caxanga;UPA;Lotado;ortopedia, odontologia, clinica medica;11986987485;166518;-8.02933;        -34.9577
