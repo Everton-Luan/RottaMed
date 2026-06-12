@@ -7,7 +7,7 @@ import Controllers.Rottinha_controller as controllChat
 
 def iniciar_tela_cidadao(): 
     while True:
-        # 1. Chama a tela que você acabou de me mostrar
+
         opcao = viewC.menu_cidadao()
 
         match opcao:
@@ -27,7 +27,8 @@ def iniciar_tela_cidadao():
                 print("\n" + "=" * 45)
                 print("\n🔍 [BUSCAR UNIDADE ESPECÍFICA]")
                 print("\n" + "=" * 45)
-                # Aqui chamamos a função de busca por nome que você já tem pronta
+
+                #Aqui chama a função buscar
                 controllU.iniciar_busca_especifica() 
                 if viewC.confirmacao_volta():
                     continue
@@ -39,7 +40,7 @@ def iniciar_tela_cidadao():
                 print("\n📍 [BUSCANDO UNIDADES PRÓXIMAS]")
                 print("\n" + "=" * 45)
                 
-                # 1. Pede o endereço ao cidadão
+                #Vai pedir o endereço
                 endereco = viewC.pedir_localizacao_atual()
                 coordenadas = endereco_para_coordenadas(endereco)
                 
