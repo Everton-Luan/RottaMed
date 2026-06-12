@@ -20,7 +20,7 @@ def iniciar_sistema():
                 
             case "4":
                 print("\n" + "=" * 45)
-                print(" 👋 Encerrando o sistema RottaMed... Até logo!".center(45))
+                print(" Encerrando o sistema RottaMed... Até logo!".center(45))
                 print("=" * 45)
                 break #Quebra o while principal, desligando o programa
 

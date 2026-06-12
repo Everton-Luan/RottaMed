@@ -8,12 +8,12 @@ def validar_cpf(cpf: str) -> bool:
     if len(cpf_limpo) != 11:
         return False
 
-    # Conferindo se todos os dígitos são iguais (ex: 111.111.111-11)
-    # Se a string inteira for igual ao primeiro dígito repetido 11x, é inválido
+    #Conferindo se todos os dígitos são iguais (ex: 111.111.111-11)
+    #Se a string inteira for igual ao primeiro dígito repetido 11x, é inválido
     if cpf_limpo == cpf_limpo[0] * 11:
         return False
 
-    # Muda a string para uma lista de inteiros
+    #Muda a string para uma lista de inteiros
     cpf_array = [int(digito) for digito in cpf_limpo]
 
     #Valida o primeiro dígito
@@ -58,12 +58,12 @@ def pedir_coordenada(mensagem):
         valor = input(mensagem).strip().replace(",", ".")
         
         try:
-            #Tenta converter para float. Se for letra, o Python vai gritar um 'ValueError'
+            #Tenta converter para float. Se for letra, vai mostrar 'ValueError'
             valor_float = float(valor)
             
             #Se deu certo, retorna o valor convertido em texto para salvar no TXT
             return str(valor_float)
             
         except ValueError:
-            # +Se deu erro, ele cai aqui e o while True repete a pergunta
-            print(" ❌ Erro! A coordenada deve ser um número válido (ex: -8.0475). Tente novamente.")
+            #Se deu erro, ele cai aqui e o while True repete a pergunta
+            print("Erro! A coordenada deve ser um número válido (ex: -8.0475). Tente novamente.")
