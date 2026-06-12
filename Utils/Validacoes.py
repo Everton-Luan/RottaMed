@@ -1,10 +1,10 @@
 import re
 
 def validar_cpf(cpf: str) -> bool:
-    # Extraindo apenas os números do CPF
+    #Vai ver os números do CPF
     cpf_limpo = re.sub(r'\D', '', cpf)
 
-    # Conferindo se o tamanho está correto
+    #Confere se o tamanho ta certo
     if len(cpf_limpo) != 11:
         return False
 
@@ -13,10 +13,10 @@ def validar_cpf(cpf: str) -> bool:
     if cpf_limpo == cpf_limpo[0] * 11:
         return False
 
-    # Convertendo a string para uma lista de inteiros
+    # Muda a string para uma lista de inteiros
     cpf_array = [int(digito) for digito in cpf_limpo]
 
-    # Validação do primeiro dígito
+    #Valida o primeiro dígito
     soma1 = 0
     multiplicador1 = 10
     for i in range(9):
@@ -30,7 +30,7 @@ def validar_cpf(cpf: str) -> bool:
     if resto1 != cpf_array[9]:
         return False
 
-    # Validação do segundo dígito
+    #Valida o segundo dígito
     soma2 = 0
     multiplicador2 = 11
     for i in range(10):
@@ -45,3 +45,25 @@ def validar_cpf(cpf: str) -> bool:
         return False
 
     return True
+
+def validar_nome(nome):
+
+    nome = nome.replace(" ", "")
+
+    return nome.isalpha()
+
+def pedir_coordenada(mensagem):
+    while True:
+        #Pede o dado e já troca vírgula por ponto (brasileiro adora usar vírgula)
+        valor = input(mensagem).strip().replace(",", ".")
+        
+        try:
+            #Tenta converter para float. Se for letra, o Python vai gritar um 'ValueError'
+            valor_float = float(valor)
+            
+            #Se deu certo, retorna o valor convertido em texto para salvar no TXT
+            return str(valor_float)
+            
+        except ValueError:
+            # +Se deu erro, ele cai aqui e o while True repete a pergunta
+            print(" ❌ Erro! A coordenada deve ser um número válido (ex: -8.0475). Tente novamente.")
