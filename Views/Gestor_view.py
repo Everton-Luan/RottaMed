@@ -1,53 +1,25 @@
+def pedir_credenciais():
+    print("\n" + "="45)
+    print(" 🔐 LOGIN DO GESTOR ".center(45))
+    print("="45)
 
-def menu_gestor():
-    print("\n" + "=" * 45)
-    print(" GESTÃO DO PLANTÃO ".center(45))
-    print("=" * 45)
-    print("[1] Atualizar Especialidades")
-    print("[2] Atualizar Fluxo")
-    print("[3] Visualizar Painel Geral")
-    print("[4] Sair")
-    print("=" * 45)
+    cpf = input("▶ Digite seu CPF: ").strip()
+    senha = input("▶ Digite sua senha: ").strip()
+
+    return cpf, senha
+
+def menu_gestor(nome_unidade):
+    print("\n" + "="45)
+    print(" 🏥 PAINEL DO GESTOR ".center(45))
+    print(f" 📍 {nome_unidade} ".center(45))
+    print("="45)
+    print("  [1] Visualizar dados da minha unidade")
+    print("  [2] Atualizar Fluxo e Especializações")
+    print("  [3] Sair")
+    print("="*45)
 
     opcao = input("▶ Escolha uma opção: ").strip()
-    while opcao not in ["1","2", "3", "4"]:
+    while opcao not in ["1", "2", "3"]:
         opcao = input(" ❌ Opção inválida!! Digite novamente: ").strip()
+
     return opcao
-
-
-def pedir_especialidades():
-    print("\n" + "=" * 45)
-    print(" ATUALIZAR ESPECIALIDADES ".center(45))
-    print("=" * 45)
-
-    especialidades = input(
-        "▶ Digite as especialidades da unidade: "
-    ).strip().title()
-
-    return especialidades
-
-
-def pedir_lotacao():
-    print("\n" + "=" * 45)
-    print(" ATUALIZAR FLUXO ".center(45))
-    print("=" * 45)
-
-    lotacao = input(
-        "▶ Digite a nova lotação da unidade: "
-    ).strip()
-
-    return lotacao
-
-
-def exibir_painel_geral(unidade):
-    print("\n" + "=" * 45)
-    print(" PAINEL GERAL DA UNIDADE ".center(45))
-    print("=" * 45)
-
-    print(f"▶ Nome: {unidade['nome']}")
-    print(f"▶ Tipo: {unidade['tipo']}")
-    print(f"▶ Fluxo: {unidade['fluxo']}")
-    print(f"▶ Especialidades: {unidade['especializações']}")
-    print(f"▶ Lotação: {unidade['lotacao']}")
-
-    print("=" * 45 + "\n")
