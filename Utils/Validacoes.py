@@ -51,3 +51,19 @@ def validar_nome(nome):
     nome = nome.replace(" ", "")
 
     return nome.isalpha()
+
+def pedir_coordenada(mensagem):
+    while True:
+        # Pede o dado e já troca vírgula por ponto (brasileiro adora usar vírgula)
+        valor = input(mensagem).strip().replace(",", ".")
+        
+        try:
+            # Tenta converter para float. Se for letra, o Python vai gritar um 'ValueError'
+            valor_float = float(valor)
+            
+            # Se deu certo, retorna o valor convertido em texto para salvar no TXT
+            return str(valor_float)
+            
+        except ValueError:
+            # Se deu erro, ele cai aqui e o while True repete a pergunta
+            print(" ❌ Erro! A coordenada deve ser um número válido (ex: -8.0475). Tente novamente.")
