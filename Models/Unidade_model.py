@@ -12,7 +12,7 @@ def criar_dicionario_unidade(nome, tipo, fluxo, especializacoes, cpf, senha):
         "senha_gestor": senha
     }
 
-# Salva os dados da unidade no arquivo.txt
+# Salva os dados de uma UNICA unidade no arquivo.txt, adicionando-o na ultima linha
 def salvar_unidade(unidade):
     with open (ARQUIVO, "a", encoding="utf-8") as arquivo:
 
@@ -26,6 +26,27 @@ def salvar_unidade(unidade):
         )
 
         arquivo.write(linha)
+
+# Modifica os dados de TODAS as unidades
+def modificar_unidades(lista_unidades):
+    """Apaga o arquivo atual e reescreve tudo usando a lista fornecida."""
+    
+    # 🚨 ATENÇÃO: O segredo está na letra "w" (Write/Sobrescrever)
+    with open(ARQUIVO, "w", encoding="utf-8") as arquivo:
+        
+        # Como recebemos uma lista, fazemos um 'for' para gravar uma por uma
+        for unidade in lista_unidades:
+            linha = (
+                f"{unidade['nome']};"
+                f"{unidade['tipo']};"
+                f"{unidade['fluxo']};"
+                f"{unidade['especializações']};"
+                f"{unidade['cpf_gestor']};"
+                f"{unidade['senha_gestor']}\n"
+            )
+            
+            arquivo.write(linha)
+
 
 # Lê os dados de todas as unidades e retorna uma lista de dicionários
 def ler_dados_txt():
