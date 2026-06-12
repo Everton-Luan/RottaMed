@@ -41,7 +41,7 @@ def exibir_unidades(unidades):
         print("▶ Nenhuma unidade cadastrada.")
     else:
         for i, unidade in enumerate(unidades, start=1):
-        print(f"\n[{i}] {unidade['nome']}")
+            print(f"\n[{i}] {unidade['nome']}")
             print(f"   Tipo: {unidade['tipo']}")
             print(f"   Fluxo: {unidade['fluxo']}")
             print(f"   Especialidades: {unidade['especializações']}")
@@ -73,7 +73,6 @@ def pedir_novos_dados():
         "tipo": tipo, 
         "fluxo": fluxo,
         "especializações": especializacoes,
-        "lotação": lotacao
     }
 
 
