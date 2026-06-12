@@ -20,12 +20,6 @@ def menu_lotacao():
         print("\nSelecione o novo Status de Lotação:")
         print("1. Fluxo Baixo | 2. Moderado | 3. Lotado | 4. Superlotado")
       
-def menu_dev():
-        print("==== GESTÃO DESENVOLVEDOR ====")
-        print("1. Cadastrar unidades")
-        print("2. Visualizar unidades")
-        print("3. Atualizar unidades")
-        print("4. Sair")
 
 def menu_cidadao():
         print("===== ROTTAMED =====")
