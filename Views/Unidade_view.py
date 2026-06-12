@@ -26,6 +26,32 @@ def add_dados_unidade():
 
     return nome, tipo, fluxo, espec, cpf_gestor, senha_gestor
 
+def gestor_atualiza_dados(unidade):
+    print("\n" + "="*45)
+    print(" 🔄 ATUALIZANDO DADOS DA UNIDADE ".center(45))
+    print("="*45)
+    texto = (" 💡 Dica: Caso não queira modificar algum dado, apenas aperte enter.")
+    texto_formatado = textwrap.fill(
+            texto,
+            width=45,
+            subsequent_indent="  " # Dá dois espacinhos se a palavra tiver que descer
+        )
+    print(texto_formatado)
+    print("-" * 45)
+
+    # 1. Pede o novo Fluxo
+    novo_fluxo = input(f"▶ Novo Fluxo [Fluxo atual: {unidade['fluxo']}]: ").strip()
+    # Se o usuário apertar Enter vazio, mantemos o que já estava
+    if novo_fluxo == "":
+        novo_fluxo = unidade['fluxo']
+        
+    # 2. Pede as novas Especializações
+    nova_espec = input(f"▶ Novas Especializações [Especializações atuais: {unidade['especializações']}]: ").strip()
+    # Se apertar Enter vazio, mantemos as antigas
+    if nova_espec == "":
+        nova_espec = unidade['especializações']
+        
+    return novo_fluxo, nova_espec
 
 
 # Ferramenta de pergunta
