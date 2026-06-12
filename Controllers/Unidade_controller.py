@@ -8,7 +8,7 @@ ARQUIVO =  "database/unidades.txt"
 # Criando unidade
 def iniciar_cadastro_unidade():
     # Chama a View para pegar os dados da nova unidade 
-    nome, tipo, fluxo, espec, cpf, senha = view.add_dados_unidade()
+    nome, tipo, fluxo, espec, cpf, senha, latitude, longitude = view.add_dados_unidade()
 
     unidades_existentes = model.ler_dados_txt()
     for u in unidades_existentes:
@@ -17,7 +17,7 @@ def iniciar_cadastro_unidade():
             return # Cancela o cadastro imediatamente e volta para o menu
     
     # Estrutura os dados recebidos em um dicionario usando o model para serem padronizados
-    nova_unidade = model.criar_dicionario_unidade(nome, tipo, fluxo, espec, cpf, senha)
+    nova_unidade = model.criar_dicionario_unidade(nome, tipo, fluxo, espec, cpf, senha, latitude, longitude)
     
     # Salva
     model.salvar_unidade(nova_unidade)
@@ -86,7 +86,7 @@ def iniciar_atualizacao():
     
     # 7. Chama a sua função incrível da View que pede os dados e valida tudo
     view.menssagem("\n[Digite os Novos Dados]:")
-    nome, tipo, fluxo, espec, cpf, senha = view.add_dados_unidade()
+    nome, tipo, fluxo, espec, cpf, senha, latitude, longitude = view.add_dados_unidade()
     
     # 8. Atualiza o dicionário NA LISTA (substitui o antigo pelo novo)
     lista_unidades[indice_encontrado] = {
@@ -95,7 +95,9 @@ def iniciar_atualizacao():
         "fluxo": fluxo,
         "especializações": espec,
         "cpf_gestor": cpf,
-        "senha_gestor": senha
+        "senha_gestor": senha,
+        "latitude": latitude,
+        "longitude": longitude
     }
     
     # 9. Manda o Model salvar essa lista atualizada por cima do arquivo velho

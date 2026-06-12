@@ -1,5 +1,5 @@
-import Utils.Validacoes as util
-import Utils.texto as utilTexto
+import Utils.Validacoes as utilV
+import Utils.texto as utilT
 import textwrap
 
 # Pegando os dados que  serão digitados
@@ -7,7 +7,7 @@ def add_dados_unidade():
     print("\n===== Adicionando dados da unidade =====")
 
     nome = input("▶ Digite o nome da unidade: ").strip().title()
-    while util.validar_nome(nome) == False:
+    while utilV.validar_nome(nome) == False:
         nome = input(" ❌ Nome inválido!! digite novamente: ")
 
     tipo = input("▶ Digite o tipo (UPA/UBS): ").strip().upper()
@@ -19,12 +19,18 @@ def add_dados_unidade():
     espec = input("▶ Digite as especializações: ").strip().title()
 
     cpf_gestor = input("▶ Digite o CPF do gestor: ").strip()
-    while util.validar_cpf(cpf_gestor) == False:
+    while utilV.validar_cpf(cpf_gestor) == False:
             cpf_gestor = input(" ❌ CPF inválido!! Digite novamente: ")
 
     senha_gestor = input("▶ Digite a senha do gestor: ")
 
-    return nome, tipo, fluxo, espec, cpf_gestor, senha_gestor
+    print("\n📍 Localização da Unidade:")
+
+    latitude = utilV.pedir_coordenada("▶ Digite a Latitude (ex: -8.0475): ")
+
+    longitude = utilV.pedir_coordenada("▶ Digite a Longitude (ex: -34.8770): ")
+    
+    return nome, tipo, fluxo, espec, cpf_gestor, senha_gestor, latitude, longitude
 
 def gestor_atualiza_dados(unidade):
     print("\n" + "="*45)
@@ -39,14 +45,19 @@ def gestor_atualiza_dados(unidade):
     print(texto_formatado)
     print("-" * 45)
 
-    # 1. Pede o novo Fluxo
-    novo_fluxo = input(f"▶ Novo Fluxo [Fluxo atual: {unidade['fluxo']}]: ").strip()
+    # Imprime os dados da unidade antes de atualizar
+    exibir_unidade_unica(unidade)
+
+    # Pede o novo Fluxo
+    print("📍 Atualizar dados:")
+    print("-" * 45)
+    novo_fluxo = input("▶ Novo Fluxo: ").strip()
     # Se o usuário apertar Enter vazio, mantemos o que já estava
     if novo_fluxo == "":
         novo_fluxo = unidade['fluxo']
         
-    # 2. Pede as novas Especializações
-    nova_espec = input(f"▶ Novas Especializações [Especializações atuais: {unidade['especializações']}]: ").strip()
+    # Pede as novas Especializações
+    nova_espec = input("▶ Novas Especializações: ").strip()
     # Se apertar Enter vazio, mantemos as antigas
     if nova_espec == "":
         nova_espec = unidade['especializações']
@@ -73,23 +84,21 @@ def exibir_unidades(lista_unidades):
     for i, unidade in enumerate(lista_unidades):
         # Imprime a primeira linha (Nome e Tipo)
         print(f"[{i + 1}] {unidade['nome'].title()} ({unidade['tipo']})")
-        
         # Imprime a segunda linha (Fluxo)
         print(f"▶ Fluxo: {unidade['fluxo']}")
-        
         # Monta APENAS a linha de especializações
         texto_espec = f"▶ Especializações: {unidade['especializações'].title()}"
-        
         # O textwrap vai agir só nas especializações se passar de 45 letras
         texto_espec_formatado = textwrap.fill(
             texto_espec,
             width=45,
             subsequent_indent="  " # Dá dois espacinhos se a palavra tiver que descer
         )
-        
         # Imprime a linha de especializações formatada
         print(texto_espec_formatado)
-        
+        print(f"▶ Latitude: {unidade['latitude']}")
+        print(f"▶ Longitude: {unidade['longitude']}")
+    
         # Linha divisória de baixo
         print("-" * 45)
 
@@ -111,12 +120,15 @@ def exibir_unidade_unica(unidade):
             subsequent_indent="  " # Dá dois espacinhos se a palavra tiver que descer
         )
     print(texto_espec_formatado)
+    print(f"▶ Latitude: {unidade['latitude']}")    
+    print(f"▶ Longitude: {unidade['longitude']}")
+
     print("="*45 + "\n")
 
 def confirmacao_exclusao():
     """Pergunta se o usuário tem certeza e devolve True (Sim) ou False (Não)"""
     resposta = input(" ⚠️ Tem certeza que deseja excluir esta unidade permanentemente? (Sim/Não): ").strip().upper()
-    resposta = utilTexto.remover_acentos(resposta)
+    resposta = utilT.remover_acentos(resposta)
     while resposta not in ["SIM", "NAO"]:
         resposta = input(" ❌ Tipo inválido!! digite 'Sim' ou 'Não'!!: ").strip().upper()
 
