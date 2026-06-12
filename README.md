@@ -1,7 +1,7 @@
 # <img src="Assets/RottaMed-logo.png" width="30" height="30" align="center"> | RottaMed
 Esse repositório é um projeto para a disciplina Fundamentos de Programação, que tem como objetivo criar estruturas de código como CRUD's e algumas funcionalidades baseadas no RottaMed (outro projeto).
 
-| RottaMed
+## Funcionalidades
 Esse projeto é voltado para o acompanhamento dos atendimentos da Região Metropolitana do Recife, trazendo dados como:
 
 * Especialidades médicas em tempo real por unidades de saúde
