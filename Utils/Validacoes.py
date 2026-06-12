@@ -45,3 +45,9 @@ def validar_cpf(cpf: str) -> bool:
         return False
 
     return True
+
+def validar_nome(nome):
+
+    nome = nome.replace(" ", "")
+
+    return nome.isalpha()
