@@ -3,8 +3,7 @@ import Controllers.Unidade_controller as controllU
 from Models.Unidade_model import ler_dados_txt
 from Utils.geolocalizacao import calcular_distancia, endereco_para_coordenadas
 from Views.Cidadao_view import pedir_localizacao_atual, exibir_unidades_com_distancia
-
-ARQUIVO = "Database/usuarios.txt"
+import Controllers.Rottinha_controller as controllChat
 
 def iniciar_tela_cidadao(): 
     while True:
@@ -64,7 +63,7 @@ def iniciar_tela_cidadao():
                     # 5. Exibe as 3 mais próximas (ou todas se tiver menos de 3)
                     viewC.exibir_unidades_com_distancia(unidades_com_dist[:3])
                 else:
-                    print("\n❌ Não foi possível encontrar a localização informada.")
+                    print("\n Não foi possível encontrar a localização informada.")
                 
                 if viewC.confirmacao_volta():
                     continue
@@ -72,8 +71,13 @@ def iniciar_tela_cidadao():
                     print("Saindo...")
                     break
         
-
             case "4":
+                print("\n" + "=" * 45)
+                print("\n [ROTINHA]")
+                print("\n" + "=" * 45)
+                controllChat.iniciar_chatbot()
+
+            case "5":
                 print("\n" + "=" * 45)
                 print("\n↩️ Retornando ao Menu Principal...")
                 print("\n" + "=" * 45)

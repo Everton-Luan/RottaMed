@@ -5,11 +5,12 @@ def menu_cidadao():
         print("[1] Visualizar todas unidades ")
         print("[2] Visualizar unidade especifica")
         print("[3] Ver unidades mais próximas (GPS)")
-        print("[4] Sair")
+        print("[4] Descreva seus sintomas!")
+        print("[5] Sair")
         print("=" * 45)
 
         opcao = input("▶ Escolha uma opção: ").strip()
-        while opcao not in ["1", "2", "3"]:
+        while opcao not in ["1", "2", "3","4", "5"]:
             opcao = input(" ❌ Opção inválida!! Digite novamente: ").strip()
         return opcao
 
