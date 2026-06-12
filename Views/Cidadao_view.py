@@ -30,7 +30,7 @@ def exibir_unidades_com_distancia(unidades):
             dist = unidade.get('distancia_km', 0)
             print(f"\n[{i}] {unidade['nome']} - {dist:.2f} km de distância")
             print(f"   Tipo: {unidade['tipo']}")
-            print(f"   Lotação: {unidade['fluxo']}")
+            print(f"   Fluxo: {unidade['fluxo']}")
             print(f"   Especialidades: {unidade['especializações']}")
 
     print("\n" + "=" * 45)
