@@ -1,7 +1,7 @@
 def pedir_credenciais():
-    print("\n" + "="45)
+    print("\n" + "="*45)
     print(" 🔐 LOGIN DO GESTOR ".center(45))
-    print("="45)
+    print("="*45)
 
     cpf = input("▶ Digite seu CPF: ").strip()
     senha = input("▶ Digite sua senha: ").strip()
@@ -9,10 +9,10 @@ def pedir_credenciais():
     return cpf, senha
 
 def menu_gestor(nome_unidade):
-    print("\n" + "="45)
+    print("\n" + "="*45)
     print(" 🏥 PAINEL DO GESTOR ".center(45))
     print(f" 📍 {nome_unidade} ".center(45))
-    print("="45)
+    print("="*45)
     print("  [1] Visualizar dados da minha unidade")
     print("  [2] Atualizar Fluxo e Especializações")
     print("  [3] Sair")
