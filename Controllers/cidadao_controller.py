@@ -15,7 +15,7 @@ def iniciar_tela_cidadao():
                 print("\n" + "=" * 45)
                 print("\n [VISUALIZANDO TODAS AS UNIDADES]")
                 print("\n" + "=" * 45)
-                # Aqui chamamos a função de listagem geral que você já tem pronta
+                # Aqui chamamos a função de listagem geral
                 controllU.iniciar_busca_geral() 
                 if viewC.confirmacao_volta():
                     continue

@@ -47,7 +47,7 @@ def modificar_unidades(lista_unidades):
                 f"{unidade['especializações']};"
                 f"{unidade['cpf_gestor']};"
                 f"{unidade['senha_gestor']};"
-                f"{unidade['latitude']};    "
+                f"{unidade['latitude']};"
                 f"{unidade['longitude']}\n"
             )
             
