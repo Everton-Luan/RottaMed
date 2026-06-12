@@ -5,3 +5,5 @@ Esse repositório é um projeto para a disciplina Fundamentos de Programação, 
 * Everton Luan Gomes Batista - everton.luan@ufrpe.br / elgb@cesar.school
 * Ricardo Freire de Sousa Neto - rfsn@cesar.school / ric_fneto@live.com
 * Rayane Maria de Pontes Gomes - rmpg@cesar.school
+* Letícia de Carvalho Minucelli - lcm4@cesar.school
+* Mirella de Sousa Albuquerque - msa5@cesar.school
