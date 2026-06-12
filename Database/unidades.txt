@@ -1,7 +1,2 @@
 UPA Ibura;UPA;Baixo;Clinica Geral,Pediatria;71094807478;1234;0.0;0.0
-Hospital Helena Moura;UPA;Lotado;Pediatria;71094807478;1234;0.0;0.0
-UBS Boa Viagem;UBS;Moderado;Clinica Geral,Vacinação;71094807478;1234;0.0;0.0
-UPA Imbiribeira;UPA;Baixo;Clinica Geral,Traumatologia;71094807478;1234;0.0;0.0
-UBS Cais do Apolo;UBS;Baixo;Clinica Geral,Odontologia;71094807478;1234;0.0;0.0
-Upa Ficticia;UPA;Moderado;Plau, Lau, Xablau;71094807478;1234;0.0;0.0
-Ubs Disney;UBS;Super Lotado;Misca, Musca, Mickey, Mouse;71094807478;4321;0.0;0.0
+UBS Varzea;UBS;Super Lotado;Ortopedia,Odontologia;11986987485;166518;0.0;0.0
