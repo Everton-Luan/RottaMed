@@ -22,10 +22,10 @@ def iniciar_tela_gestor():
             
     #Caso não encontre, não permite a entrada na área do gestor
     if unidade_logada is None:
-        print("\n❌ Login falhou: CPF ou senha incorretos ou não cadastrados.")
+        print("\n Login falhou: CPF ou senha incorretos ou não cadastrados.")
         return #O usuário retorna ao menu 
         
-    print(f"\n✅ Acesso liberado! Bem-vindo(a) gestor(a) da {unidade_logada['nome'].title()}.")
+    print(f"\n Acesso liberado! Bem-vindo(a) gestor(a) da {unidade_logada['nome'].title()}.")
     
     #O laço infinito de navegação do gestor
     while True:
@@ -61,6 +61,6 @@ def iniciar_atualizacao_gestor(unidade, indice, lista_unidades):
     #O Model salva a lista nova
     modelU.modificar_unidades(lista_unidades)
     
-    print("\n✅ Fluxo e Especializações atualizados com sucesso!")
+    print("\n Fluxo e Especializações atualizados com sucesso!")
     
     return unidade

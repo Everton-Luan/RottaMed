@@ -17,9 +17,8 @@ def iniciar_chatbot():
             case "3":
                 print("\nEncerrando.")
                 break
-                
-        # Pergunta se o usuário quer fazer uma nova triagem ou sair
- # Pergunta se o usuário quer fazer uma nova triagem ou sair
+       
+        #Pergunta se o usuário quer fazer uma nova triagem ou sair
         print("\nDeseja fazer outra consulta com o Rottinha?")
         print("[1] Sim")
         print("[2] Não")

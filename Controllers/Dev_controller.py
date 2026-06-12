@@ -8,10 +8,10 @@ def iniciar_tela_dev():
     senha_correta = "dev123" 
     
     if senha_digitada != senha_correta:
-        print("\n❌ Acesso Negado: Senha master incorreta.")
+        print("\n Acesso Negado: Senha master incorreta.")
         return 
         
-    print("\n✅ Acesso liberado! Bem-vindo(a) ao painel de controle mestre.")
+    print("\n Acesso liberado! Bem-vindo(a) ao painel de controle mestre.")
     
     while True:
         opcao = viewDev.menu_dev()
@@ -43,5 +43,5 @@ def iniciar_tela_dev():
                 controlU.iniciar_exclusao()
                 
             case "6":
-                print("\n👋 Encerrando sessão do Desenvolvedor...")
+                print("\n Encerrando sessão do Desenvolvedor...")
                 break
